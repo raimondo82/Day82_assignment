@@ -1,0 +1,21 @@
+let_num= ["a","b","c","d","e","f","g","h","i","l","m","n","o","p","q","r","s","t","u","v","z","w","x","y","z","1","2","3","4","5","6","7","8","9","0"," "]
+
+morse=['.- ','-... ', '-.-. ', '-.. ', '. ','..-. ','--. ','.... ', '.. ', '.--- ',
+        '-.- ','.-.. ','-- ', '-. ', '--- ', '.--. ', '--.- ','.-. ', '... ',
+        '- ','..- ','...- ', '.-- ','-..- ','-.-- ','--.. ','.---- ','..--- ','...-- ', '....- ','..... ','-.... ','--... ','---.. ','----. ', '----- ',' ']
+
+requested_text= input("What would you like to convert to Morse code?").lower()
+
+def morse_converter(text):
+    converted_text=""
+    for element in text:
+        if element not in let_num:
+            converted_text +=element
+        else:
+            morse_position= let_num.index(element)
+            converted_text += morse[morse_position]
+    print(f"This is the text converted in Morse code:{converted_text}")
+
+
+
+morse_converter(requested_text)
